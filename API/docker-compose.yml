@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  nodejscurso-database:
+    container_name: nodejscurso-database
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=Pseudocodigo377
+      - MYSQL_DATABASE=nodejscurso
+    ports:
+      - '3306:3306'
+    networks:
+      - backend
+    volumes:
+      - mysql-nodejscurso-data:/var/libs/mysql
+ 
+volumes:
+  mysql-nodejscurso-data:
+networks:
+  backend:
